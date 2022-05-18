@@ -1,0 +1,121 @@
+{
+  "$type": "ThunderRoad.ItemData, ThunderRoad",
+  "id": "apoz123Wand.ElderWand",
+  "saveFolder": "bas",
+  "version": 4,
+  "localizationId": "apoz123Wand.ElderWand",
+  "displayName": "Elder Wand",
+  "description": "Wand of Elder, never prosper",
+  "author": "Apoz123",
+  "price": 0.0,
+  "purchasable": true,
+  "tier": 2,
+  "levelRequired": 0,
+  "isStackable": false,
+  "categoryPath": [
+    "Daggers"
+  ],
+  "iconEffectId": null,
+  "iconAddress": "apoz123Wand.icon",
+  "prefabAddress": "apoz123Wand.ElderWand",
+  "pooledCount": 0,
+  "androidPooledCount": 0,
+  "type": "Weapon",
+  "slot": "Small",
+  "snapAudioContainerAddress": "Bas.AudioGroup.Snap.Dagger",
+  "mass": 0.8,
+  "drag": 0.1,
+  "angularDrag": 0.05,
+  "manaRegenMultiplier": 1.0,
+  "spellChargeSpeedPlayerMultiplier": 1.0,
+  "spellChargeSpeedNPCMultiplier": 1.0,
+  "collisionMaxOverride": 0,
+  "collisionEnterOnly": false,
+  "collisionNoMinVelocityCheck": false,
+  "forceLayer": "None",
+  "flyFromThrow": true,
+  "flyRotationSpeed": 3.0,
+  "flyThrowAngle": 145.0,
+  "telekinesisSafeDistance": 1.0,
+  "telekinesisSpinEnabled": true,
+  "telekinesisThrowRatio": 1.0,
+  "grippable": true,
+  "grabAndGripClimb": false,
+  "playerGrabAndGripChangeLayer": true,
+  "customSnaps": [],
+  "modules": [
+    {
+      "$type": "WandSpellss.MyItemModule, WandSpellss",
+      "spellSpeed": 5.0,
+      "magicEffect": true
+    },
+{
+      "$type": "ThunderRoad.ItemModuleAI, ThunderRoad",
+      "weaponClass": "Melee",
+      "weaponHandling": "OneHanded",
+      "parryIgnoreRotation": false,
+      "parryRotation": 90.0,
+      "parryDualRotation": 60.0,
+      "armResistanceMultiplier": 2.0,
+      "parryRevertAngleRange": {
+        "x": -80.0,
+        "y": -180.0
+      },
+      "parryDefaultPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "parryDefaultLeftRotation": {
+        "x": 25.0,
+        "y": -10.0,
+        "z": -65.0
+      },
+      "parryDefaultRightRotation": {
+        "x": 30.0,
+        "y": 5.0,
+        "z": 60.0
+      },
+      "allowDynamicHeight": false,
+      "defenseHasPriority": false,
+      "attackIgnore": false,
+      "attackForceParryIgnoreRotation": false
+    }
+  ],
+  "colliderGroups": [],
+  "damagers": [
+    {
+      "$type": "ThunderRoad.ItemData+Damager, ThunderRoad",
+      "transformName": "Pierce",
+      "damagerID": "WAWPierceBlunt"
+    },
+    {
+      "$type": "ThunderRoad.ItemData+Damager, ThunderRoad",
+      "transformName": "Blunt",
+      "damagerID": "Handle1H"
+    }
+  ],
+  "Interactables": [
+    {
+      "$type": "ThunderRoad.ItemData+Interactable, ThunderRoad",
+      "transformName": "Handle",
+      "interactableId": "ObjectHandleLight",
+      "overrideHandPose": true,
+      "handPoseId": "HandleSmall"
+    }
+  ],
+  "effectHinges": [],
+  "whooshs": [
+    {
+      "$type": "ThunderRoad.ItemData+Whoosh, ThunderRoad",
+      "transformName": "Whoosh",
+      "effectId": "WhooshSwordShort",
+      "trigger": "Always",
+      "stopOnSnap": true,
+      "minVelocity": 3.0,
+      "maxVelocity": 10.0,
+      "dampening": 0.1
+    }
+
+  ]
+}

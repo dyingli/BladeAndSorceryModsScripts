@@ -1,0 +1,43 @@
+{
+  "$type": "ThunderRoad.VoiceData, ThunderRoad",
+  "id": "Spot",
+  "saveFolder": "bas",
+  "version": 0,
+  "dialogs": [
+    {
+      "$type": "ThunderRoad.VoiceData+Dialog, ThunderRoad",
+      "id": "idle",
+      "audioGroupAddress": "DuckIdle.audio"
+    },
+    {
+      "$type": "ThunderRoad.VoiceData+Dialog, ThunderRoad",
+      "id": "hit",
+      "audioGroupAddress": "DuckHit.audio"
+    },
+    {
+      "$type": "ThunderRoad.VoiceData+Dialog, ThunderRoad",
+      "id": "death",
+      "audioGroupAddress": "DuckDeath.audio"
+    },
+    {
+      "$type": "ThunderRoad.VoiceData+Dialog, ThunderRoad",
+      "id": "deathmuffled",
+      "audioGroupAddress": "DuckDeath.audio"
+    },
+    {
+      "$type": "ThunderRoad.VoiceData+Dialog, ThunderRoad",
+      "id": "falling",
+      "audioGroupAddress": "DuckAlert.audio"
+    },
+    {
+      "$type": "ThunderRoad.VoiceData+Dialog, ThunderRoad",
+      "id": "alert",
+      "audioGroupAddress": "DuckAlert.audio"
+    },
+    {
+      "$type": "ThunderRoad.VoiceData+Dialog, ThunderRoad",
+      "id": "choke",
+      "audioGroupAddress": "DuckHit.audio"
+    }
+  ]
+}
