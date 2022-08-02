@@ -1,7 +1,7 @@
 {
-  "Name": "ElderWand",
+  "Name": "HarryPotterSpells",
   "Description": "Spells from Harry Potter",
   "Author": "Apoz123",
   "ModVersion": "1.0",
-  "GameVersion": "10.0"
+  "GameVersion": "0.11.0.0"
 }
