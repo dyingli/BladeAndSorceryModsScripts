@@ -13,10 +13,11 @@ namespace WandSpellss
     {
         public float spellSpeed;
         public bool magicEffect;
+        public float expelliarmusPower;
         public override void OnItemLoaded(Item item)
         {
             base.OnItemLoaded(item);
-            item.gameObject.AddComponent<MyWeaponComponent>().Setup(spellSpeed,magicEffect);
+            item.gameObject.AddComponent<MyWeaponComponent>().Setup(spellSpeed,magicEffect,expelliarmusPower);
         }
 
     }

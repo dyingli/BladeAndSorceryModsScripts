@@ -15,8 +15,6 @@ namespace WandSpellss
         public void Start() {
             item = GetComponent<Item>();
             item.gameObject.AddComponent<StunDamager>();
-            source = GetComponent<AudioSource>();
-            source.clip = null;
         }
     }
 }

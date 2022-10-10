@@ -15,10 +15,17 @@ namespace WandSpellss
         Item item;
         private float elapsedTime;
         private Vector3 engorgioMaxSize;
+        GameObject hit;
 
         void Start() {
-
-            item = GetComponent<Item>();
+            if (GetComponent<Item>() != null)
+            {
+                item = GetComponent<Item>();
+            }
+            else if (GetComponentInParent<Item>() != null)
+            {
+                item = GetComponentInParent<Item>();
+            }
             cantEngorgio = false;
             engorgioMaxSize = new Vector3(2,2,2);
         

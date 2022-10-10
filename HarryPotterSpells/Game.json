@@ -1,0 +1,43 @@
+{
+  "$type": "ThunderRoad.GameData, ThunderRoad",
+  "categories": [
+    {
+      "name": "Wands",
+      "group": "Harry Potter",
+      "iconAddress": "Bas.Icon.plain-dagger"
+    }
+  ],
+  "categoryGroups": [
+  	{
+      "id": "Harry Potter",
+      "iconAddress": "Bas.Icon.plain-dagger",
+      "useInInventory": false,
+      "inventorySortingOrder": 2,
+      "inventoryMaxSlotAmount": 5,
+      "limitInventoryMaxItemAmount": false,
+      "inventoryMaxItemAmount": 0,
+      "hoverSounds": {
+        "audioContainerAddress": "Bas.AudioGroup.Misc.CategoryGroupHoverConsumable",
+        "volumeDb": -15.0
+      },
+      "selectSounds": {
+        "audioContainerAddress": null,
+        "volumeDb": 0.0
+      },
+      "itemHoverSounds": {
+        "audioContainerAddress": null,
+        "volumeDb": 0.0
+      },
+      "itemSelectSounds": {
+        "audioContainerAddress": null,
+        "volumeDb": 0.0
+      },
+      "itemStoreSounds": {
+        "audioContainerAddress": null,
+        "volumeDb": 0.0
+      }
+    }
+  ],
+  "holderSlots": [
+  ]
+}

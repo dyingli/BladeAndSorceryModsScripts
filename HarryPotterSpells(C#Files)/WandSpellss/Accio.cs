@@ -11,6 +11,7 @@ namespace WandSpellss
     public class Accio : MonoBehaviour
     {
         Item item;
+        internal Item wand;
         Item npcItem;
         internal Vector3 startPoint;
         internal Vector3 endPoint;
@@ -31,25 +32,34 @@ namespace WandSpellss
                 RaycastHit hit;
                 Transform parent;
 
-                if (Physics.Raycast(item.flyDirRef.position, item.flyDirRef.forward, out hit))
-                {
+            if (Physics.Raycast(item.flyDirRef.position, item.flyDirRef.forward, out hit))
+            {
 
-                    Debug.Log("Did hit.");
-                    Debug.Log(hit.collider.gameObject.transform.parent.name);
+                Debug.Log("Did hit.");
+                Debug.Log(hit.collider.gameObject.transform.parent.name);
 
-                    parent = hit.collider.gameObject.transform.parent;
-                    parentLocal = parent.gameObject;
+                parent = hit.collider.gameObject.transform.parent;
+                parentLocal = hit.collider.gameObject;
                 if (parentLocal.gameObject.GetComponent<Item>() != null)
                 {
-                    startPoint = parent.gameObject.transform.position;
-                    endPoint = Player.local.handLeft.transform.position;
+                    startPoint = parentLocal.gameObject.transform.position;
+                    endPoint = wand.mainHandler.otherHand.transform.position;
                     cantAccio = false;
+                }
+
+                else if (parentLocal.gameObject.GetComponentInParent<Item>() != null) {
+
+                    startPoint = parentLocal.gameObject.transform.position;
+                    endPoint = wand.mainHandler.otherHand.transform.position;
+                    cantAccio = false;
+
+
                 }
 
                 else {
 
                     cantAccio = true;
-                
+
                 }
                     
                     

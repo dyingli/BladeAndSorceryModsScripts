@@ -12,14 +12,23 @@ namespace WandSpellss
     {
 
         bool cantEvanesco;
+
+        
         Item item;
         private float elapsedTime;
         float dissolveVal;
 
         void Start()
         {
+            if (GetComponent<Item>() != null)
+            {
+                item = GetComponent<Item>();
+            }
+            else if (GetComponentInParent<Item>() != null) {
 
-            item = GetComponent<Item>();
+                item = GetComponentInParent<Item>();
+
+            }
             cantEvanesco = false;
             dissolveVal = 0;
 

@@ -15,7 +15,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -33,6 +33,9 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Blade &amp; Sorcery\BladeAndSorcery_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -71,22 +74,37 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Blade &amp; Sorcery\BladeAndSorcery_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Blade &amp; Sorcery\BladeAndSorcery_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ascendio.cs" />
     <Compile Include="AvadaKedavra.cs" />
     <Compile Include="Aguamenti.cs" />
     <Compile Include="Accio.cs" />
+    <Compile Include="DarkMark.cs" />
+    <Compile Include="DictationRecognizer.cs" />
     <Compile Include="Engorgio.cs" />
     <Compile Include="EngorgioPerItem.cs" />
     <Compile Include="Evanesco.cs" />
     <Compile Include="EvanescoPerItem.cs" />
     <Compile Include="Geminiocs.cs" />
+    <Compile Include="HorcruxData.cs" />
+    <Compile Include="ItemJSONFormat.cs" />
+    <Compile Include="Horcrux.cs" />
     <Compile Include="Imperio.cs" />
+    <Compile Include="ItemVoiceModule.cs" />
+    <Compile Include="JSONParser.cs" />
     <Compile Include="LerpMovement.cs" />
     <Compile Include="KeyWordRecogWand.cs" />
+    <Compile Include="Morsmordre.cs" />
     <Compile Include="NPCWands.cs" />
     <Compile Include="Protego.cs" />
+    <Compile Include="RayCastShoot.cs" />
     <Compile Include="sempraDespawn.cs" />
+    <Compile Include="Soul.cs" />
     <Compile Include="SpeechRecogWands.cs" />
     <Compile Include="PetrificusTotalus.cs" />
     <Compile Include="Levicorpus.cs" />
@@ -97,9 +115,19 @@
     <Compile Include="ItemModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyWeaponComponent.cs" />
+    <Compile Include="TestDictation.cs" />
+    <Compile Include="VoiceWeaponComponent.cs" />
     <Compile Include="Waddiwassi.cs" />
     <Compile Include="WaddiWassiPerItem.cs" />
     <Compile Include="WingardiumLeviosa.cs" />
+    <Compile Include="WingardiumLeviosaJoint.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y \"$(TargetDir)$(TargetName).pdb" "C:\Program Files (x86)\Steam\steamapps\common\Blade &amp; Sorcery\BladeAndSorcery_Data\StreamingAssets\Mods\HarryPotterSpells\$(TargetName).pdb"
+copy /Y "$(TargetDir)$(TargetName).dll" "C:\Program Files (x86)\Steam\steamapps\common\Blade &amp; Sorcery\BladeAndSorcery_Data\StreamingAssets\Mods\HarryPotterSpells\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -21,9 +21,11 @@ namespace WandSpellss
 
 
         public void OnCollisionEnter(Collision c) {
-
-            c.gameObject.GetComponentInParent<Creature>().ragdoll.SetState(Ragdoll.State.Destabilized);
-            c.gameObject.GetComponentInParent<Creature>().TryElectrocute(1, 3, true, false);
+            if (c.gameObject.GetComponentInParent<Creature>() != null)
+            {
+                c.gameObject.GetComponentInParent<Creature>().ragdoll.SetState(Ragdoll.State.Destabilized);
+                c.gameObject.GetComponentInParent<Creature>().TryElectrocute(1, 3, true, false);
+            }
 
 
         }

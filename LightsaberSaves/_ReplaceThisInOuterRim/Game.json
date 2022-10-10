@@ -1,0 +1,64 @@
+{
+  "$type": "ThunderRoad.GameData, ThunderRoad",
+  "categories": [
+    {
+      "name": "Custom Sabers",
+      "group": "The Outer Rim",
+      "iconAddress": "theouterrim.lightsaber-logo"
+    },
+    {
+      "name": "Blasters",
+      "group": "The Outer Rim",
+      "iconAddress": "theouterrim.blaster-logo"
+    },
+    {
+      "name": "Kyber Crystals",
+      "group": "The Outer Rim",
+      "iconAddress": "theouterrim.crystal-logo"
+    },
+    {
+      "name": "Lightsabers",
+      "group": "The Outer Rim",
+      "iconAddress": "theouterrim.lightsaber-logo"
+    },
+    {
+      "name": "Outer Rim",
+      "group": "The Outer Rim",
+      "iconAddress": "theouterrim.tor-logo"
+    }
+  ],
+  "categoryGroups": [
+  	{
+      "id": "The Outer Rim",
+      "iconAddress": "theouterrim.tor-logo",
+      "useInInventory": false,
+      "inventorySortingOrder": 2,
+      "inventoryMaxSlotAmount": 5,
+      "limitInventoryMaxItemAmount": false,
+      "inventoryMaxItemAmount": 0,
+      "hoverSounds": {
+        "audioContainerAddress": "Bas.AudioGroup.Misc.CategoryGroupHoverConsumable",
+        "volumeDb": -15.0
+      },
+      "selectSounds": {
+        "audioContainerAddress": null,
+        "volumeDb": 0.0
+      },
+      "itemHoverSounds": {
+        "audioContainerAddress": null,
+        "volumeDb": 0.0
+      },
+      "itemSelectSounds": {
+        "audioContainerAddress": null,
+        "volumeDb": 0.0
+      },
+      "itemStoreSounds": {
+        "audioContainerAddress": null,
+        "volumeDb": 0.0
+      }
+    }
+  ],
+  "holderSlots": [
+    "TOR_Pouch"
+  ]
+}

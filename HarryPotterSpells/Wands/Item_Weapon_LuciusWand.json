@@ -2,6 +2,8 @@
   "$type": "ThunderRoad.ItemData, ThunderRoad",
   "id": "apoz123Wand.LuciusWand",
   "saveFolder": "bas",
+  "sensitiveContent": "None",
+  "sensitiveFilterBehaviour": "Discard",
   "version": 4,
   "localizationId": "apoz123Wand.LuciusWand",
   "displayName": "Lucius Malfoy's Wand",
@@ -13,11 +15,11 @@
   "weight": null,
   "size": null,
   "levelRequired": 0,
-  "category": "Swords",
+  "category": "Wands",
   "iconEffectId": null,
   "preferredItemCenter": "Mass",
   "prefabAddress": "apoz123Wand.LuciusWand",
-  "iconAddress": "apoz123Wand.icon",
+  "iconAddress": "apoz123Wand.LuciusWand.Icon",
   "closeUpIconAddress": null,
   "pooledCount": 0,
   "androidPooledCount": 0,
@@ -30,13 +32,15 @@
   "inventoryHoverSounds": null,
   "inventorySelectSounds": null,
   "inventoryStoreSounds": null,
-  "slot": "Large",
+  "slot": "Small",
   "snapAudioContainerAddress": "Bas.AudioGroup.Snap.Dagger",
+  "snapAudioVolume_dB": 0.0,
   "unsnapAudioContainerAddress": null,
+  "unsnapAudioVolume_dB": 0.0,
   "overrideMassAndDrag": true,
-  "mass": 2.1,
-  "drag": 1.1,
-  "angularDrag": 0.09,
+  "mass": 0.8,
+  "drag": 0.4,
+  "angularDrag": 0.05,
   "manaRegenMultiplier": 1.0,
   "spellChargeSpeedPlayerMultiplier": 1.0,
   "spellChargeSpeedNPCMultiplier": 1.0,
@@ -150,8 +154,9 @@
   "modules": [
     {
       "$type": "WandSpellss.MyItemModule, WandSpellss",
-      "spellSpeed": 20.0,
-      "magicEffect": false
+      "spellSpeed": 30.0,
+      "magicEffect": false,
+      "expelliarmusPower": 40.0
     },
     {
       "$type": "ThunderRoad.ItemModuleAI, ThunderRoad",
@@ -194,35 +199,15 @@
   "colliderGroups": [
     {
       "$type": "ThunderRoad.ItemData+ColliderGroup, ThunderRoad",
-      "transformName": "Collide",
-      "colliderGroupId": "BladeSword"
+      "transformName": "Blades",
+      "colliderGroupId": "BladeDagger"
     }
   ],
   "damagers": [
     {
       "$type": "ThunderRoad.ItemData+Damager, ThunderRoad",
       "transformName": "Pierce",
-      "damagerID": "SwordPierce"
-    },
- {
-      "$type": "ThunderRoad.ItemData+Damager, ThunderRoad",
-      "transformName": "Pierce 2",
-      "damagerID": "SwordPierce"
-    },
-{
-      "$type": "ThunderRoad.ItemData+Damager, ThunderRoad",
-      "transformName": "Slash",
-      "damagerID": "SwordSlash1H"
-    },
-  {
-      "$type": "ThunderRoad.ItemData+Damager, ThunderRoad",
-      "transformName": "Slash 2",
-      "damagerID": "SwordSlash1H"
-    },
-  {
-      "$type": "ThunderRoad.ItemData+Damager, ThunderRoad",
-      "transformName": "Blunt",
-      "damagerID": "Handle1H"
+      "damagerID": "DaggerPierce"
     }
   ],
   "Interactables": [

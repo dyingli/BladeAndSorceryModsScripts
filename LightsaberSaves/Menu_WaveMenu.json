@@ -1,0 +1,15 @@
+{
+    "$type": "ThunderRoad.MenuData, ThunderRoad",
+    "id": "LightsaberSaveMenu",
+    "saveFolder": "Bas",
+    "version": 1,
+    "order": 8.0,
+    "isDefault": false,
+    "iconAddress": "apoz123SaveMenu.Icon",
+    "prefabAddress": "apoz123SaveMenu",
+    "module":
+    {
+      "$type": "LightsaberSave.SaveMenu, LightsaberSave"
+    }
+
+}

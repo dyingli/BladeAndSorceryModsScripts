@@ -21,19 +21,18 @@ namespace WandSpellss
             item = GetComponent<Item>();
 
 
-            source = GetComponent<AudioSource>();
-            source.clip = null;
-
 
         }
 
         public void OnCollisionEnter(Collision c)
         {
-            SetTimer();
-            c.gameObject.GetComponentInParent<Creature>().StopAnimation();
-            c.gameObject.GetComponentInParent<Creature>().ToogleTPose();
+            if (c.gameObject.GetComponentInParent<Creature>() != null) {
+                SetTimer();
+                c.gameObject.GetComponentInParent<Creature>().StopAnimation();
+                c.gameObject.GetComponentInParent<Creature>().ToogleTPose();
 
-            enemy = c.gameObject;
+                enemy = c.gameObject;
+            }
 
 
         }

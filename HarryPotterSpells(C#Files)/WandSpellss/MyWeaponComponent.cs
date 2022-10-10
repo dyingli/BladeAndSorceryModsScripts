@@ -33,6 +33,7 @@ namespace WandSpellss
         ItemData avadaLightning;
         public float spellSpeed;
         public bool magicEffect;
+        private float explliarmusPower;
         int currIndex;
         Dictionary<string, ItemData> spells = new Dictionary<string, ItemData>();
         private KeyWordRecogWand speech;
@@ -70,6 +71,9 @@ namespace WandSpellss
         ItemData textObject;
         private Timer bTimer;
         GameObject currentText;
+        private bool objectIsHovering;
+
+        float expelliarmusPower;
 
         public void Start()
         {
@@ -96,8 +100,10 @@ namespace WandSpellss
             spellsListWithText.Add("Evanesco");
             spellsListWithText.Add("Geminio");
             spellsListWithText.Add("SectumSempra");
+            spellsListWithText.Add("Levicorpus");
+            spellsListWithText.Add("WindgardiumLeviosa");
             //spellsListWithText.Add("Waddiwassi");
-           //spellsListWithText.Add("Imperio");
+            //spellsListWithText.Add("Imperio");
             //spellsListWithText.Add("WingardiumLeviosa");
             spellsList.Add(Catalog.GetData<ItemData>("StupefyObject"));
             spellsList.Add(Catalog.GetData<ItemData>("ExpelliarmusObject"));
@@ -110,6 +116,8 @@ namespace WandSpellss
             spellsList.Add(Catalog.GetData<ItemData>("ProtegoObject"));
             spellsList.Add(Catalog.GetData<ItemData>("ProtegoObject"));
             spellsList.Add(Catalog.GetData<ItemData>("SectumsempraObject"));
+            spellsList.Add(Catalog.GetData<ItemData>("LevicorpusObject"));
+            spellsList.Add(Catalog.GetData<ItemData>("LevicorpusObject"));
             //spellsList.Add(Catalog.GetData<ItemData>("SectumsempraObject"));
             //spellsList.Add(Catalog.GetData<ItemData>("SectumsempraObject"));
 
@@ -248,6 +256,15 @@ namespace WandSpellss
                 }
             }
 
+            if (objectIsHovering == true) {
+
+                Debug.Log("Got here: past objectIsHoveringCheck");
+                float targetPos = Vector3.Distance(item.gameObject.GetComponent<WingardiumLeviosaJoint>().hitObjectItem.transform.position, item.flyDirRef.transform.position);
+                Vector3 newestPos = item.flyDirRef.transform.forward * targetPos;
+                item.gameObject.GetComponent<WingardiumLeviosaJoint>().hitObjectItem.gameObject.GetComponent<ConfigurableJoint>().targetPosition = newestPos;
+
+            }
+
 
             if (touch.isPlaying == false)
             {
@@ -259,9 +276,6 @@ namespace WandSpellss
                 }
 
             }
-
-
-
 
         }
          
@@ -333,13 +347,13 @@ namespace WandSpellss
             if (action == Interactable.Action.AlternateUseStart && canFire == true)
             {
                 //item.mainHandler.grabbedHandle.HapticRumble(item.mainHandler.playerHand);
-                if (currIndex != 4 && currIndex != 5 && currIndex != 6 && currIndex != 7 && currIndex != 8 && currIndex != 9 && currIndex != 11 && currIndex != 12 && currIndex != 13) {
+                if (currIndex != 4 && currIndex != 5 && currIndex != 6 && currIndex != 7 && currIndex != 8 && currIndex != 9 && currIndex != 12 && currIndex != 13) {
                     SetTimer();
                     distortionEffect.SpawnAsync(distortion => {
                         currentDistortion = distortion;
                     });
                 }
-                if (currIndex != 6 && currIndex != 7 && currIndex != 8 && currIndex != 9 && currIndex != 11 && currIndex != 12 && currIndex != 13)
+                if (currIndex != 6 && currIndex != 7 && currIndex != 8 && currIndex != 9 && currIndex != 12 && currIndex != 13)
                 {
                     
                     spellsList[currIndex].SpawnAsync(projectile =>
@@ -381,7 +395,7 @@ namespace WandSpellss
                                     }
 
                                 }
-                                
+
                                 sourceCurrent.Play();
                                 playSound = true;
                             }
@@ -389,6 +403,7 @@ namespace WandSpellss
                             else if (currIndex == 1)
                             {
                                 projectile.gameObject.AddComponent<Expelliarmus>();
+                                projectile.gameObject.GetComponent<Expelliarmus>().power = expelliarmusPower;
 
                                 projectile.rb.useGravity = false;
                                 projectile.rb.drag = 0.0f;
@@ -538,13 +553,34 @@ namespace WandSpellss
 
                             }
 
+                            else if (currIndex == 11)
+                            {
+                                projectile.gameObject.AddComponent<Levicorpus>();
+                                projectile.rb.useGravity = false;
+                                projectile.rb.drag = 0.0f;
+                                currentShooters = projectile;
+                                //Add the force in the direction of the flyDirRef (the blue axis in unity)
+                                projectile.rb.AddForce(item.flyDirRef.transform.forward * spellSpeed, ForceMode.Impulse);
+                                projectile.gameObject.AddComponent<SpellDespawn>();
 
+                                foreach (AudioSource c in item.GetComponentsInChildren<AudioSource>())
+                                {
+
+                                    switch (c.name)
+                                    {
+
+                                        case "LevicorpusSound":
+                                            sourceCurrent = c;
+                                            break;
+
+                                    }
+
+                                }
+                                sourceCurrent.Play();
+                            }
 
                         });
                         
-
-
-                    
                 }
 
                 if (currIndex == 6)
@@ -608,6 +644,28 @@ namespace WandSpellss
 
                 }
 
+                
+                if (currIndex == 12)
+                {
+
+                    item.gameObject.AddComponent<WingardiumLeviosaJoint>();
+                    item.gameObject.GetComponent<WingardiumLeviosaJoint>().wand = item;
+                    objectIsHovering = item.gameObject.GetComponent<WingardiumLeviosaJoint>().objectIsHovering;
+                    if (objectIsHovering == false)
+                    {
+                        item.gameObject.GetComponent<WingardiumLeviosaJoint>().CastRay();
+
+                    }
+                    
+                    else {
+
+                        item.gameObject.GetComponent<WingardiumLeviosaJoint>().hitObjectItem.gameObject.GetComponent<HingeJoint>().connectedBody = null;
+                        item.gameObject.GetComponent<WingardiumLeviosaJoint>().objectIsHovering = false;
+                    }
+                    
+                }
+                
+                
                 /*
                 if (currIndex == 11) {
 
@@ -685,10 +743,11 @@ namespace WandSpellss
 
 
 
-        public void Setup(float importSpeed, bool importMagicEffect)
+        public void Setup(float importSpeed, bool importMagicEffect, float importExpelliarmusPower)
         {
             spellSpeed = importSpeed;
             magicEffect = importMagicEffect;
+            expelliarmusPower = importExpelliarmusPower;
         }
 
 

@@ -40,10 +40,10 @@ namespace WandSpellss
                 Debug.Log(hit.collider.gameObject.transform.parent.name);
 
                 parent = hit.collider.gameObject.transform.parent;
-                parentLocal = parent.gameObject;
-                if (parentLocal.GetComponent<Item>() != null)
+                parentLocal = hit.collider.gameObject;
+                if (parentLocal.GetComponentInParent<Item>() != null)
                 {
-                    if (parentLocal.gameObject.GetComponent<Renderer>() != null)
+                    if (parentLocal.GetComponent<Renderer>() != null)
                     {
                         myMaterials = parentLocal.GetComponent<Renderer>().materials.ToList();
                         Material[] matDefGood = new Material[myMaterials.Count];
@@ -72,9 +72,9 @@ namespace WandSpellss
 
                     }
 
-                    else if (parentLocal.gameObject.GetComponentInParent<Renderer>() != null)
+                    else if (parentLocal.GetComponentInParent<Renderer>() != null)
                     {
-                        myMaterials = parentLocal.GetComponentInChildren<Renderer>().materials.ToList();
+                        myMaterials = parentLocal.GetComponentInParent<Renderer>().materials.ToList();
                         Material[] matDefGood = new Material[myMaterials.Count];
 
                         for (int i = 0; i < myMaterials.Count; i++)
@@ -94,7 +94,7 @@ namespace WandSpellss
                         cantEvanesco = false;
                         parentLocal.AddComponent<EvanescoPerItem>();
                     }
-                    else if (parentLocal.gameObject.GetComponentInChildren<Renderer>() != null)
+                    else if (parentLocal.GetComponentInChildren<Renderer>() != null)
                     {
                         myMaterials = parentLocal.GetComponentInChildren<Renderer>().materials.ToList();
                         Material[] matDefGood = new Material[myMaterials.Count];
@@ -117,6 +117,84 @@ namespace WandSpellss
                         parentLocal.AddComponent<EvanescoPerItem>();
                     }
                     
+                }
+
+                else if (parentLocal.GetComponent<Item>() != null)
+                {
+                    if (parentLocal.GetComponent<Renderer>() != null)
+                    {
+                        myMaterials = parentLocal.GetComponent<Renderer>().materials.ToList();
+                        Material[] matDefGood = new Material[myMaterials.Count];
+
+                        for (int i = 0; i < myMaterials.Count; i++)
+                        {
+                            //Debug.Log("Im in the " +i+ " iteration of the loop");
+                            evanescoDissolve.SetTexture("_Albedo", myMaterials[i].GetTexture("_BaseMap"));
+                            evanescoDissolve.SetColor("_color", myMaterials[i].GetColor("_BaseColor"));
+                            //Debug.Log(evanescoDissolve.GetTexture("_Albedo"));
+                            evanescoDissolve.SetTexture("_Normal", myMaterials[i].GetTexture("_BumpMap"));
+                            //Debug.Log(evanescoDissolve.GetTexture("_Normal"));
+                            evanescoDissolve.SetTexture("_Metallic", myMaterials[i].GetTexture("_MetallicGlossMap"));
+                            //Debug.Log(evanescoDissolve.GetTexture("_Metallic"));
+
+                            matDefGood[i] = evanescoDissolve;
+                        }
+                        parentLocal.GetComponent<Renderer>().materials = matDefGood;
+
+
+
+
+
+                        cantEvanesco = false;
+                        parentLocal.AddComponent<EvanescoPerItem>();
+
+                    }
+
+                    else if (parentLocal.GetComponentInParent<Renderer>() != null)
+                    {
+                        myMaterials = parentLocal.GetComponentInParent<Renderer>().materials.ToList();
+                        Material[] matDefGood = new Material[myMaterials.Count];
+
+                        for (int i = 0; i < myMaterials.Count; i++)
+                        {
+                            //Debug.Log("Im in the " + i + " iteration of the loop");
+                            evanescoDissolve.SetTexture("_Albedo", myMaterials[i].GetTexture("_BaseMap"));
+                            evanescoDissolve.SetColor("_color", myMaterials[i].GetColor("_BaseColor"));
+                            //Debug.Log(evanescoDissolve.GetTexture("_Albedo"));
+                            evanescoDissolve.SetTexture("_Normal", myMaterials[i].GetTexture("_BumpMap"));
+                            //Debug.Log(evanescoDissolve.GetTexture("_Normal"));
+                            evanescoDissolve.SetTexture("_Metallic", myMaterials[i].GetTexture("_MetallicGlossMap"));
+                            //Debug.Log(evanescoDissolve.GetTexture("_Metallic"));
+
+                            matDefGood[i] = evanescoDissolve;
+                        }
+                        parentLocal.GetComponentInParent<Renderer>().materials = matDefGood;
+                        cantEvanesco = false;
+                        parentLocal.AddComponent<EvanescoPerItem>();
+                    }
+                    else if (parentLocal.GetComponentInChildren<Renderer>() != null)
+                    {
+                        myMaterials = parentLocal.GetComponentInChildren<Renderer>().materials.ToList();
+                        Material[] matDefGood = new Material[myMaterials.Count];
+
+                        for (int i = 0; i < myMaterials.Count; i++)
+                        {
+                            //Debug.Log("Im in the " + i + " iteration of the loop");
+                            evanescoDissolve.SetTexture("_Albedo", myMaterials[i].GetTexture("_BaseMap"));
+                            evanescoDissolve.SetColor("_color", myMaterials[i].GetColor("_BaseColor"));
+                            //Debug.Log(evanescoDissolve.GetTexture("_Albedo"));
+                            evanescoDissolve.SetTexture("_Normal", myMaterials[i].GetTexture("_BumpMap"));
+                            //Debug.Log(evanescoDissolve.GetTexture("_Normal"));
+                            evanescoDissolve.SetTexture("_Metallic", myMaterials[i].GetTexture("_MetallicGlossMap"));
+                            //Debug.Log(evanescoDissolve.GetTexture("_Metallic"));
+
+                            matDefGood[i] = evanescoDissolve;
+                        }
+                        parentLocal.GetComponentInChildren<Renderer>().materials = matDefGood;
+                        cantEvanesco = false;
+                        parentLocal.AddComponent<EvanescoPerItem>();
+                    }
+
                 }
 
                 else

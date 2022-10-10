@@ -44,12 +44,17 @@ namespace WandSpellss
 
                 parent = hit.collider.gameObject.transform.parent;
                 ogScale = parent.gameObject.transform.localScale;
-                parentLocal = parent.gameObject;
-                if (parentLocal.gameObject.GetComponent<Item>() != null)
+                parentLocal = hit.collider.gameObject;
+                if (parentLocal.GetComponentInParent<Item>() != null)
                 {
                     cantEngorgio = false;
                     parentLocal.AddComponent<EngorgioPerItem>();
-                    
+                }
+
+                else if (parentLocal.GetComponent<Item>() != null) {
+
+                    cantEngorgio = false;
+                    parentLocal.AddComponent<EngorgioPerItem>();
                 }
 
                 else

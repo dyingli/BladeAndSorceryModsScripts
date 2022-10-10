@@ -15,7 +15,7 @@ namespace WandSpellss
         {
 
 
-            this.item = GetComponent<Item>();
+           item = GetComponent<Item>();
 
         }
         public void OnCollisionEnter(Collision c)

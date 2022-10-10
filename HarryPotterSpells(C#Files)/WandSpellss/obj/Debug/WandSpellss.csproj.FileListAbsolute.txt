@@ -106,9 +106,10 @@ C:\Users\braxt\source\repos\WandSpellss\bin\Debug\Unity.Collections.LowLevel.ILS
 C:\Users\braxt\source\repos\WandSpellss\obj\Debug\WandSpellss.csproj.CopyComplete
 C:\Users\braxt\source\repos\WandSpellss\obj\Debug\WandSpellss.dll
 C:\Users\braxt\source\repos\WandSpellss\obj\Debug\WandSpellss.pdb
-C:\Users\braxt\source\repos\WandSpellss\obj\Debug\WandSpellss.csprojAssemblyReference.cache
 C:\Users\braxt\source\repos\WandSpellss\bin\Debug\Unity.VisualEffectGraph.Runtime.dll
 C:\Users\braxt\source\repos\WandSpellss\bin\Debug\Unity.XR.PicoXR.dll
 C:\Users\braxt\source\repos\WandSpellss\bin\Debug\UnityEngine.TLSModule.dll
 C:\Users\braxt\source\repos\WandSpellss\bin\Debug\Unity.Subsystem.Registration.dll
 C:\Users\braxt\source\repos\WandSpellss\bin\Debug\ThunderRoad.pdb
+C:\Users\braxt\source\repos\WandSpellss\obj\Debug\WandSpellss.csprojAssemblyReference.cache
+C:\Users\braxt\source\repos\WandSpellss\bin\Debug\Newtonsoft.Json.xml

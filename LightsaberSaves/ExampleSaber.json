@@ -1,0 +1,308 @@
+{
+  "$type": "ThunderRoad.ItemData, ThunderRoad",
+  "id": "ExampleSaber",
+  "saveFolder": "Bas",
+  "sensitiveContent": "None",
+  "sensitiveFilterBehaviour": "Discard",
+  "version": 4,
+  "localizationId": "ExampleSaber",
+  "displayName": "Example Saber",
+  "description": "One of the concept lightsaber designs of Galen Marek, Darth Vader's apprentice.",
+  "author": "Kingo64",
+  "price": 0.0,
+  "purchasable": true,
+  "tier": 0,
+  "weight": null,
+  "size": null,
+  "levelRequired": 0,
+  "category": "Custom Sabers",
+  "iconEffectId": null,
+  "preferredItemCenter": "Mass",
+  "prefabAddress": "theouterrim_lightsabers.Lightsaber_JediKiller",
+  "iconAddress": "theouterrim_lightsabers.Lightsaber_JediKiller.Icon",
+  "closeUpIconAddress": null,
+  "pooledCount": 0,
+  "androidPooledCount": 0,
+  "type": "Weapon",
+  "canBeStoredInPlayerInventory": false,
+  "limitMaxStorableQuantity": false,
+  "maxStorableQuantity": 0,
+  "isStackable": false,
+  "maxStackQuantity": 0,
+  "inventoryHoverSounds": null,
+  "inventorySelectSounds": null,
+  "inventoryStoreSounds": null,
+  "slot": "Medium",
+  "snapAudioContainerAddress": null,
+  "snapAudioVolume_dB": 0.0,
+  "unsnapAudioContainerAddress": null,
+  "unsnapAudioVolume_dB": 0.0,
+  "overrideMassAndDrag": true,
+  "mass": 1.5,
+  "drag": 1.0,
+  "angularDrag": 0.05,
+  "manaRegenMultiplier": 1.0,
+  "spellChargeSpeedPlayerMultiplier": 1.0,
+  "spellChargeSpeedNPCMultiplier": 1.0,
+  "collisionMaxOverride": 0,
+  "collisionEnterOnly": false,
+  "collisionNoMinVelocityCheck": false,
+  "forceLayer": "None",
+  "waterHandSpringMultiplierCurve": {
+    "$type": "UnityEngine.AnimationCurve, UnityEngine.CoreModule",
+    "keys": [
+      {
+        "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+        "time": 0.0,
+        "value": 0.3,
+        "inTangent": 0.0,
+        "outTangent": 0.0,
+        "inWeight": 0.0,
+        "outWeight": 0.0,
+        "weightedMode": "None",
+        "tangentMode": 0
+      },
+      {
+        "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+        "time": 1.0,
+        "value": 0.15,
+        "inTangent": 0.0,
+        "outTangent": 0.0,
+        "inWeight": 0.0,
+        "outWeight": 0.0,
+        "weightedMode": "None",
+        "tangentMode": 0
+      }
+    ],
+    "length": 2,
+    "preWrapMode": "ClampForever",
+    "postWrapMode": "ClampForever"
+  },
+  "waterDragMultiplierCurve": {
+    "$type": "UnityEngine.AnimationCurve, UnityEngine.CoreModule",
+    "keys": [
+      {
+        "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+        "time": 0.0,
+        "value": 1.0,
+        "inTangent": 0.0,
+        "outTangent": 0.0,
+        "inWeight": 0.0,
+        "outWeight": 0.0,
+        "weightedMode": "None",
+        "tangentMode": 0
+      },
+      {
+        "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+        "time": 1.0,
+        "value": 10.0,
+        "inTangent": 0.0,
+        "outTangent": 0.0,
+        "inWeight": 0.0,
+        "outWeight": 0.0,
+        "weightedMode": "None",
+        "tangentMode": 0
+      }
+    ],
+    "length": 2,
+    "preWrapMode": "ClampForever",
+    "postWrapMode": "ClampForever"
+  },
+  "waterSampleMinRadius": 0.2,
+  "flyFromThrow": false,
+  "flyRotationSpeed": 30.0,
+  "flyThrowAngle": 0.0,
+  "telekinesisSafeDistance": 1.0,
+  "telekinesisSpinEnabled": true,
+  "telekinesisThrowRatio": 1.0,
+  "telekinesisAutoGrabAnyHandle": false,
+  "grippable": false,
+  "grabAndGripClimb": false,
+  "playerGrabAndGripChangeLayer": true,
+  "customSnaps": [],
+  "drainImbueOnSnap": true,
+  "imbueEnergyOverTimeOnSnap": {
+    "$type": "UnityEngine.AnimationCurve, UnityEngine.CoreModule",
+    "keys": [
+      {
+        "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+        "time": 0.0,
+        "value": 1.0,
+        "inTangent": 0.0,
+        "outTangent": 0.0,
+        "inWeight": 0.0,
+        "outWeight": 0.0,
+        "weightedMode": "None",
+        "tangentMode": 0
+      },
+      {
+        "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+        "time": 3.0,
+        "value": 0.0,
+        "inTangent": 0.0,
+        "outTangent": 0.0,
+        "inWeight": 0.0,
+        "outWeight": 0.0,
+        "weightedMode": "None",
+        "tangentMode": 0
+      }
+    ],
+    "length": 2,
+    "preWrapMode": "ClampForever",
+    "postWrapMode": "ClampForever"
+  },
+  "modules": [
+    {
+      "$type": "TOR.ItemModuleLightsaber, TheOuterRim",
+      "animatorId": "Animator",
+      "animateOnIgnition": true,
+      "canThrow": true,
+      "fastCollisionMode": 2,
+      "fastCollisionSpeed": 8.0,
+      "helicopterThrust": [
+        0.0,
+        100.0
+      ],
+      "kyberCrystalID": "KyberCrystalBlue",
+      "ignitionDuration": 0.1,
+      "startActive": false,
+      "throwSpeed": 7.0,
+      "lightsaberBlades": [
+        {
+          "$type": "TOR.LightsaberBlade, TheOuterRim",
+          "bladeLength": 0.9000004,
+          "phaseLengths": null,
+          "audioPitch": 1.0,
+          "glowIntensity": 1.0,
+          "kyberCrystal": "KyberCrystalBlueClassic",
+          "crystalEjectRef": "CrystalEject",
+          "collisionRef": "CollisionBlade",
+          "saberBodyRef": "SaberBody",
+          "saberTipGlowRef": "SaberTipGlow",
+          "saberGlowRef": "SaberGlow",
+          "saberParticlesRef": null,
+          "startSoundsRef": "StartSounds",
+          "stopSoundsRef": "StopSounds",
+          "whooshRef": "WhooshBlade",
+          "trail": null,
+          "crystalEject": null,
+          "saberBody": null,
+          "saberGlow": null,
+          "trailMeshRenderer": null,
+          "saberGlowLight": null,
+          "saberTipGlow": null,
+          "saberParticles": null,
+          "unstableParticles": null,
+          "whooshBlade": null,
+          "collisionBlade": null,
+          "idleSound": null,
+          "startSound": null,
+          "stopSound": null,
+          "idleSoundSource": null,
+          "startSoundSource": null,
+          "stopSoundSource": null,
+          "idleSoundNoise": null,
+          "parent": null,
+          "currentLength": 0.0,
+          "currentPhase": 0,
+          "minLength": 0.0,
+          "maxLength": 0.0,
+          "extendDelta": 0.0,
+          "ignitionDuration": 0.0,
+          "isActive": false,
+          "isUnstable": false,
+          "propBlock": null,
+          "saberBodyTrans": null
+        }
+      ],
+      "hasCoupler": false,
+      "couplingWhitelist": null,
+      "primaryGripPrimaryAction": "",
+      "primaryGripPrimaryActionHold": "",
+      "primaryGripSecondaryAction": "toggleIgnition",
+      "primaryGripSecondaryActionHold": "",
+      "controlHoldTime": 0.3
+    },
+    {
+      "$type": "ThunderRoad.ItemModuleAI, ThunderRoad",
+      "weaponClass": "Melee",
+      "secondaryClass": "None",
+      "weaponHandling": "OneHanded",
+      "secondaryHandling": "None",
+      "parryIgnoreRotation": false,
+      "parryRotation": 90.0,
+      "parryDualRotation": 60.0,
+      "armResistanceMultiplier": 3.0,
+      "parryRevertAngleRange": {
+        "x": -80.0,
+        "y": -180.0
+      },
+      "parryDefaultPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "parryDefaultLeftRotation": {
+        "x": 25.0,
+        "y": -10.0,
+        "z": -65.0
+      },
+      "parryDefaultRightRotation": {
+        "x": 45.0,
+        "y": 0.0,
+        "z": 15.0
+      },
+      "allowDynamicHeight": false,
+      "defenseHasPriority": false,
+      "attackIgnore": false,
+      "attackForceParryIgnoreRotation": false,
+      "ammoType": "",
+      "rangedWeaponData": null,
+      "stanceDatas": []
+    }
+  ],
+  "colliderGroups": [
+    {
+      "$type": "ThunderRoad.ItemData+ColliderGroup, ThunderRoad",
+      "transformName": "CollisionHilt",
+      "colliderGroupId": "BladeMace"
+    }
+  ],
+  "damagers": [
+    {
+      "$type": "ThunderRoad.ItemData+Damager, ThunderRoad",
+      "transformName": "DamagerBladeStab",
+      "damagerID": "LightsaberPierce"
+    },
+    {
+      "$type": "ThunderRoad.ItemData+Damager, ThunderRoad",
+      "transformName": "DamagerBlade",
+      "damagerID": "LightsaberSlash"
+    },
+    {
+      "$type": "ThunderRoad.ItemData+Damager, ThunderRoad",
+      "transformName": "DamagerHilt",
+      "damagerID": "Handle1H"
+    }
+  ],
+  "Interactables": [
+    {
+      "$type": "ThunderRoad.ItemData+Interactable, ThunderRoad",
+      "transformName": "HandleHilt",
+      "interactableId": "ObjectHandleLightsaber"
+    }
+  ],
+  "effectHinges": [],
+  "whooshs": [
+    {
+      "$type": "ThunderRoad.ItemData+Whoosh, ThunderRoad",
+      "transformName": "WhooshBlade",
+      "effectId": "WhooshLightsaberRedUnstable",
+      "trigger": "Always",
+      "stopOnSnap": true,
+      "minVelocity": 1.0,
+      "maxVelocity": 20.0,
+      "dampening": 0.1
+    }
+  ]
+}

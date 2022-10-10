@@ -13,7 +13,7 @@
   "weight": null,
   "size": null,
   "levelRequired": 0,
-  "category": "Swords",
+  "category": "Wands",
   "iconEffectId": null,
   "preferredItemCenter": "Mass",
   "prefabAddress": "apoz123Wand.ElderWand",
@@ -150,8 +150,9 @@
   "modules": [
     {
       "$type": "WandSpellss.MyItemModule, WandSpellss",
-      "spellSpeed": 20.0,
-      "magicEffect": false
+      "spellSpeed": 30.0,
+      "magicEffect": false,
+      "expelliarmusPower": 40.0
     },
     {
       "$type": "ThunderRoad.ItemModuleAI, ThunderRoad",
@@ -194,7 +195,7 @@
   "colliderGroups": [
     {
       "$type": "ThunderRoad.ItemData+ColliderGroup, ThunderRoad",
-      "transformName": "Collide",
+      "transformName": "ColliderBlunt",
       "colliderGroupId": "BladeSword"
     }
   ],

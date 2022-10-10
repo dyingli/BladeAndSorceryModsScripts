@@ -1,0 +1,10 @@
+{
+  "$type": "ThunderRoad.GameData, ThunderRoad",
+  "categories": [
+    {
+      "name": "Custom Sabers",
+      "group": "The Outer Rim",
+      "iconAddress": "theouterrim.lightsaber-logo"
+    }
+  ]
+}

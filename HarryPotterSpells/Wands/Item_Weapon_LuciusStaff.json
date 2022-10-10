@@ -13,11 +13,11 @@
   "weight": null,
   "size": null,
   "levelRequired": 0,
-  "category": "Swords",
+  "category": "Wands",
   "iconEffectId": null,
   "preferredItemCenter": "Mass",
   "prefabAddress": "apoz123Wand.LuciusStaff",
-  "iconAddress": "apoz123Wand.icon",
+  "iconAddress": "apoz123Wand.LuciusStaff.Icon",
   "closeUpIconAddress": null,
   "pooledCount": 0,
   "androidPooledCount": 0,
@@ -151,21 +151,20 @@
     {
       "$type": "SheathFramework.ItemModuleSheath, SheathFramework",
       "transformName": "Sheath",
-      "tagFilter": "AnyExcept",
-      "items": [],
-      "maxDepth": 0.35,
-      "snapDepth": 34,
-      "damper": 0.0,
-      "damperHeld": 0.0,
+      "tagFilter": "NoneExcept",
+      "items": ["LuciusMalfoyWand"],
+      "maxDepth": 0.345,
+      "snapDepth": 0.34,
+      "damper": 0,
+      "damperHeld": 0,
       "lockUnlessHeld": true,
       "audioContainerLocation": "",
       "spawnItemId": "apoz123Wand.LuciusWand",
       "badAngle": 45,
-      "badDepth": 0.2,
+      "badDepth": 0,
       "holderTransformName": "",
       "grindingEffectId": "HitMaterialWood",
-      "allowReverse": false
-
+      "allowReverse": true
     }
   ],
   "colliderGroups": [
